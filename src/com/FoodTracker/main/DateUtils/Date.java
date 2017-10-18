@@ -1,4 +1,4 @@
-package com.calorieCounter.main.DateUtils;
+package com.FoodTracker.main.DateUtils;
 
 import java.io.Serializable;
 import java.time.LocalDate;

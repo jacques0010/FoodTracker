@@ -1,4 +1,4 @@
-package com.calorieCounter.main.FoodUtils;
+package com.FoodTracker.main.FoodUtils;
 
 import java.io.Serializable;
 

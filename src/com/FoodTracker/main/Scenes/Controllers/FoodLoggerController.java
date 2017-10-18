@@ -1,23 +1,18 @@
-package com.calorieCounter.main.Scenes.Controllers;
+package com.FoodTracker.main.Scenes.Controllers;
 
-import com.calorieCounter.main.DateUtils.Day;
-import com.calorieCounter.main.FileUtils.ResourceManager;
-import com.calorieCounter.main.FileUtils.SceneController;
-import com.calorieCounter.main.FoodUtils.Food;
-import com.calorieCounter.main.Scenes.ConfirmationPopupCreator;
+import com.FoodTracker.main.DateUtils.Day;
+import com.FoodTracker.main.FileUtils.ResourceManager;
+import com.FoodTracker.main.FileUtils.SceneController;
+import com.FoodTracker.main.FoodUtils.Food;
+import com.FoodTracker.main.Scenes.ConfirmationPopupCreator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
-import java.util.Optional;
 import java.util.ResourceBundle;
 
 /**

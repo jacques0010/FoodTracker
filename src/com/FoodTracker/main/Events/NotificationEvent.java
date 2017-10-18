@@ -1,6 +1,6 @@
-package com.calorieCounter.main.Events;
+package com.FoodTracker.main.Events;
 
-import com.calorieCounter.main.Events.EventInterfaces.NotificationEventListener;
+import com.FoodTracker.main.Events.EventInterfaces.NotificationEventListener;
 
 import java.util.ArrayList;
 import java.util.List;

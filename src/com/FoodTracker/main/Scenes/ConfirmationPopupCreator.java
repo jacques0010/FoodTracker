@@ -1,6 +1,6 @@
-package com.calorieCounter.main.Scenes;
+package com.FoodTracker.main.Scenes;
 
-import com.calorieCounter.main.Scenes.Controllers.ConfirmationPopupController;
+import com.FoodTracker.main.Scenes.Controllers.ConfirmationPopupController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Modality;
@@ -23,7 +23,7 @@ public class ConfirmationPopupCreator {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setTitle("Confirm");
         loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/com/calorieCounter/main/Scenes/SceneRes/ConfirmationPopup.fxml"));
+        loader.setLocation(getClass().getResource("/com/FoodTracker/main/Scenes/SceneRes/ConfirmationPopup.fxml"));
         try {
             stage.setScene(new Scene(loader.load()));
         } catch (IOException e) {

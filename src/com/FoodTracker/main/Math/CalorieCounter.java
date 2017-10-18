@@ -1,4 +1,4 @@
-package com.calorieCounter.main.Math;
+package com.FoodTracker.main.Math;
 
 public class CalorieCounter {
     /**

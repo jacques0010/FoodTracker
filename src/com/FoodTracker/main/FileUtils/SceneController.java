@@ -1,4 +1,4 @@
-package com.calorieCounter.main.FileUtils;
+package com.FoodTracker.main.FileUtils;
 
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +13,7 @@ public class SceneController {
      * This class manages scenes by saving a scene fxml file location in a hashmap and referencing them with a user made key.
      **/
     private static HashMap<String, String> scenes = new HashMap<>();
-    private static final String path = "/com/calorieCounter/main/Scenes/SceneRes/";
+    private static final String path = "/com/FoodTracker/main/Scenes/SceneRes/";
 
     private SceneController() {
     }

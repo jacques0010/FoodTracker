@@ -1,9 +1,9 @@
-package com.calorieCounter.main;
+package com.FoodTracker.main;
 
-import com.calorieCounter.main.DateUtils.Day;
-import com.calorieCounter.main.FileUtils.LoadFile;
-import com.calorieCounter.main.FileUtils.ResourceManager;
-import com.calorieCounter.main.FileUtils.SceneController;
+import com.FoodTracker.main.DateUtils.Day;
+import com.FoodTracker.main.FileUtils.ResourceManager;
+import com.FoodTracker.main.FileUtils.SceneController;
+import com.FoodTracker.main.FileUtils.LoadFile;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

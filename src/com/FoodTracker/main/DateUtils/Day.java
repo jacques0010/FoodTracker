@@ -1,6 +1,6 @@
-package com.calorieCounter.main.DateUtils;
+package com.FoodTracker.main.DateUtils;
 
-import com.calorieCounter.main.FoodUtils.Food;
+import com.FoodTracker.main.FoodUtils.Food;
 
 import java.io.Serializable;
 import java.util.ArrayList;

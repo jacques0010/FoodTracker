@@ -1,4 +1,4 @@
-package com.calorieCounter.main.Scenes.Controllers;
+package com.FoodTracker.main.Scenes.Controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

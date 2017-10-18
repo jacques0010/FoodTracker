@@ -1,8 +1,8 @@
-package com.calorieCounter.main.FileUtils;
+package com.FoodTracker.main.FileUtils;
 
-import com.calorieCounter.main.DateUtils.Date;
-import com.calorieCounter.main.DateUtils.Day;
-import com.calorieCounter.main.FoodUtils.Food;
+import com.FoodTracker.main.DateUtils.Date;
+import com.FoodTracker.main.DateUtils.Day;
+import com.FoodTracker.main.FoodUtils.Food;
 
 import java.util.HashMap;
 

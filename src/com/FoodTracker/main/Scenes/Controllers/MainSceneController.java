@@ -1,10 +1,10 @@
-package com.calorieCounter.main.Scenes.Controllers;
+package com.FoodTracker.main.Scenes.Controllers;
 
 
-import com.calorieCounter.main.DateUtils.Day;
-import com.calorieCounter.main.Math.CalorieCounter;
-import com.calorieCounter.main.FileUtils.ResourceManager;
-import com.calorieCounter.main.FileUtils.SceneController;
+import com.FoodTracker.main.FileUtils.ResourceManager;
+import com.FoodTracker.main.DateUtils.Day;
+import com.FoodTracker.main.Math.CalorieCounter;
+import com.FoodTracker.main.FileUtils.SceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

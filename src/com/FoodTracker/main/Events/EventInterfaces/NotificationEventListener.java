@@ -1,4 +1,4 @@
-package com.calorieCounter.main.Events.EventInterfaces;
+package com.FoodTracker.main.Events.EventInterfaces;
 
 /**
  * Created by Justin on 10/16/2017.

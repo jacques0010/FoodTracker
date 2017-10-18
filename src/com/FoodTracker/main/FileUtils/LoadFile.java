@@ -1,4 +1,4 @@
-package com.calorieCounter.main.FileUtils;
+package com.FoodTracker.main.FileUtils;
 
 import java.io.*;
 
