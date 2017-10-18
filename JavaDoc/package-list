@@ -1,0 +1,6 @@
+com.calorieCounter.main
+com.calorieCounter.main.DateUtils
+com.calorieCounter.main.FileUtils
+com.calorieCounter.main.FoodUtils
+com.calorieCounter.main.Math
+com.calorieCounter.main.Scenes.Controllers

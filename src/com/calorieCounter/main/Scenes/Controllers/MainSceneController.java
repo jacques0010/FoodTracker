@@ -1,0 +1,86 @@
+package com.calorieCounter.main.Scenes.Controllers;
+
+
+import com.calorieCounter.main.DateUtils.Day;
+import com.calorieCounter.main.Math.CalorieCounter;
+import com.calorieCounter.main.FileUtils.ResourceManager;
+import com.calorieCounter.main.FileUtils.SceneController;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+/**
+ * Scene controller for the main scene
+ */
+public class MainSceneController implements Initializable {
+    private ResourceManager RM = ResourceManager.getInstance();
+    private Day today = RM.getDays().get(RM.getToday());
+    @FXML
+    private
+    Text proteinAmount;
+    @FXML
+    private
+    Text carbAmount;
+    @FXML
+    private Text fatAmount;
+    @FXML
+    private
+    Text proteinCalPercent;
+    @FXML
+    private
+    Text carbCalPercent;
+    @FXML
+    private Text fatCalPercent;
+    @FXML
+    private
+    Text totalCalories;
+    @FXML
+    private
+    Text calFromProtein;
+    @FXML
+    private
+    Text calFromCarbs;
+    @FXML
+    private Text calFromFat;
+
+    private float protein = today.getTotalProtein();
+    private float carbs = today.getTotalCarbs();
+    private float fats = today.getTotalFats();
+
+
+    private float calories = CalorieCounter.calories(protein, carbs, fats);
+    private float pCalories = CalorieCounter.pCalorlies(protein);
+    private float cCalories = CalorieCounter.cCalorlies(carbs);
+    private float fCalories = CalorieCounter.fCalorlies(fats);
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+        proteinAmount.setText("Protein Consumed: " + protein + "g");
+        carbAmount.setText("Carbs Consumed: " + carbs + "g");
+        fatAmount.setText("Fats Consumed: " + fats + "g");
+
+        totalCalories.setText("Total calories eaten: " + calories);
+        calFromProtein.setText("Calories from protein: " + pCalories);
+        calFromCarbs.setText("Calories from carbs: " + cCalories);
+        calFromFat.setText("Calories from fats: " + fCalories);
+
+        proteinCalPercent.setText(((pCalories / calories) * 1E2) + " %");
+        carbCalPercent.setText(((cCalories / calories) * 1E2) + " %");
+        fatCalPercent.setText(((fCalories / calories) * 1E2) + " %");
+
+    }
+
+    public void logFood(ActionEvent actionEvent) {
+        Button button = (Button) actionEvent.getSource();
+        Stage stage = (Stage) button.getScene().getWindow();
+        stage.setScene(SceneController.getScene("FoodLogger"));
+    }
+}

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<GridPane xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.calorieCounter.main.Scenes.Controllers.MainSceneController"
+          alignment="CENTER"
+          hgap="10"
+          vgap="10"
+          prefHeight="720"
+          prefWidth="1280"
+>
+    <Button fx:id="addFood"
+            GridPane.rowIndex="4"
+            GridPane.columnIndex="2"
+            onAction="#logFood"
+            text="Log Food"
+            minWidth="100"
+            minHeight="25">
+
+    </Button>
+    <Text text="Percent of calories:"
+          style="-fx-font-size: 36"
+          GridPane.columnIndex="2"
+          GridPane.rowIndex="0"
+    ></Text>
+
+    <Text text="Amount eaten"
+          style="-fx-font-size: 36"
+          GridPane.rowIndex="0"
+          GridPane.columnIndex="1"
+    ></Text>
+    <Text fx:id="proteinAmount"
+          style="-fx-font-size: 24"
+          GridPane.rowIndex="1"
+          GridPane.columnIndex="1">
+    </Text>
+    <Text fx:id="proteinCalPercent"
+        style="-fx-font-size: 24"
+        GridPane.columnIndex="2"
+        GridPane.rowIndex="1">
+
+    </Text>
+    <Text fx:id="carbAmount"
+          GridPane.rowIndex="2"
+          GridPane.columnIndex="1"
+          style="-fx-font-size: 24">
+    </Text>
+    <Text fx:id="carbCalPercent"
+          style="-fx-font-size: 24"
+          GridPane.rowIndex="2"
+          GridPane.columnIndex="2"
+    ></Text>
+    <Text fx:id="fatAmount"
+          GridPane.rowIndex="3"
+          GridPane.columnIndex="1"
+          style="-fx-font-size: 24">
+    </Text>
+    <Text fx:id="fatCalPercent"
+          style="-fx-font-size: 24"
+          GridPane.rowIndex="3"
+          GridPane.columnIndex="2"
+    ></Text>
+    <Text fx:id="totalCalories"
+          style="-fx-font-size: 36"
+          GridPane.columnIndex="0"
+          GridPane.rowIndex="0"
+    ></Text>
+
+    <Text fx:id="calFromProtein"
+          style="-fx-font-size: 24"
+          GridPane.rowIndex="1"
+          GridPane.columnIndex="0"
+    ></Text>
+    <Text fx:id="calFromCarbs"
+          style="-fx-font-size: 24"
+          GridPane.rowIndex="2"
+          GridPane.columnIndex="0"
+    ></Text>
+    <Text fx:id="calFromFat"
+                  style="-fx-font-size: 24"
+                  GridPane.rowIndex="3"
+                  GridPane.columnIndex="0"
+></Text>
+
+
+</GridPane>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.calorieCounter.main.Scenes.Controllers.FoodLoggerController"
+          prefHeight="720" prefWidth="1280.0"
+          vgap="16"
+          hgap="16">
+    <Label text="Please select food"
+           GridPane.columnIndex="0"
+           GridPane.rowIndex="0">
+    </Label>
+    <TreeView fx:id="foodList"
+              GridPane.rowIndex="0"
+              GridPane.columnIndex="0"
+              GridPane.rowSpan="10">
+
+    </TreeView>
+
+    <Label text="Custom Food"
+           GridPane.rowIndex="3"
+           GridPane.columnIndex="1"
+           GridPane.columnSpan="2"
+           style="-fx-font-size:32">
+    </Label>
+    <Label text="Name of food"
+           GridPane.columnIndex="1"
+           GridPane.rowIndex="4"
+    >
+    </Label>
+    <TextField
+               fx:id="foodName"
+               GridPane.columnIndex="1"
+               GridPane.rowIndex="5"
+               GridPane.columnSpan="2"
+    />
+
+    <Label text="Amount of protein"
+            GridPane.rowIndex="6"
+            GridPane.columnIndex="1"></Label>
+    <TextField
+               fx:id="proteinAmount"
+               GridPane.columnIndex="1"
+               GridPane.rowIndex="7"
+    />
+    <Label text="Amount of carbs"
+           GridPane.rowIndex="6"
+           GridPane.columnIndex="2"></Label>
+    <TextField
+               fx:id="carbAmount"
+               GridPane.columnIndex="2"
+               GridPane.rowIndex="7"
+    ></TextField>
+    <Label text="Amount of fats"
+           GridPane.rowIndex="6"
+           GridPane.columnIndex="3"></Label>
+    <TextField
+               fx:id="fatAmount"
+               GridPane.columnIndex="3"
+               GridPane.rowIndex="7"
+    ></TextField>
+
+    <Button fx:id="logFood"
+            onAction="#logFood"
+            text="Submit"
+            GridPane.rowIndex="8"
+            GridPane.columnIndex="2"
+            prefWidth="100"
+            alignment="CENTER"
+    ></Button>
+
+    <Button fx:id="goToMain"
+            onAction="#updateScene"
+            text="Back"
+            GridPane.rowIndex="8"
+            GridPane.columnIndex="1"
+            prefWidth="100"
+            alignment="CENTER"
+    ></Button>
+    <columnConstraints>
+        <ColumnConstraints percentWidth="36"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints prefHeight="720"/>
+    </rowConstraints>
+
+
+</GridPane>

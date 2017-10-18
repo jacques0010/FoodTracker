@@ -1,0 +1,11 @@
+/*ButtonType yesButton = new ButtonType("Yes", ButtonBar.ButtonData.YES);
+                ButtonType noButton = new ButtonType("No", ButtonBar.ButtonData.NO);
+                Dialog<ButtonType> confirm = new Dialog<>();
+                confirm.getDialogPane().getButtonTypes().addAll(yesButton,noButton);
+                Optional <ButtonType> result  = confirm.showAndWait();
+                    if (result.isPresent() && result.get() == yesButton){
+                        RM.getFoods().put(name, new Food(name, protein, carbs, fats));
+                        today.addFood(RM.getFoods().get(name));
+                    }else
+                        today.addFood(name, protein, carbs, fats);
+*/
