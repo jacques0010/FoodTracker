@@ -4,7 +4,7 @@ import com.FoodTracker.main.DateUtils.Day;
 import com.FoodTracker.main.FileUtils.ResourceManager;
 import com.FoodTracker.main.FileUtils.SceneController;
 import com.FoodTracker.main.FoodUtils.Food;
-import com.FoodTracker.main.Scenes.ConfirmationPopupCreator;
+import com.FoodTracker.main.Scenes.CustomDialogs.ConfirmationPopupCreator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -22,7 +22,7 @@ import java.util.ResourceBundle;
  * This class needs to be rethought with better event handling and maybe an event bus if more controllers are added in future.
  */
 
-public class FoodLoggerController extends TreeCell<String> implements Initializable {
+public class FoodLoggerController extends TreeCell<String> {
 
     //todo rethink popup control
     private ResourceManager RM = ResourceManager.getInstance();
@@ -57,8 +57,11 @@ public class FoodLoggerController extends TreeCell<String> implements Initializa
 
     private Food foodSelected;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    /**
+     * Creates the a treeview based off the list of saved foods and adds a change listener to the treeview.
+     * Any styled components are set here as well.
+     */
+    public void initialize() {
         updateTreeView();
         if (foodList != null) {
             MultipleSelectionModel<TreeItem<String>> model = foodList.getSelectionModel();
@@ -76,6 +79,9 @@ public class FoodLoggerController extends TreeCell<String> implements Initializa
         goToMain.getStyleClass().add("styled-button");
     }
 
+    /**
+     * Updates the treeview to the latest list of foods.
+     */
 
     private void updateTreeView() {
         TreeItem<String> root = new TreeItem<>("Foods");
@@ -88,12 +94,18 @@ public class FoodLoggerController extends TreeCell<String> implements Initializa
         }
     }
 
+    /**
+     * Gets a action from a javafx button and checks if there is a food selected from the tree or if there is a custom <p>
+     * food that has been created and logs it to the list of foods eaten that day. If the food is not on the saved list <p>
+     * then the food will be added to the food list and the treeview updated.
+     * @param actionEvent
+     */
     public void logFood(ActionEvent actionEvent) {
         Button button = (Button) actionEvent.getSource();
         if (!foodName.getText().equals("")
-                && varifyFloat(proteinAmount.getText())
-                && varifyFloat(carbAmount.getText())
-                && varifyFloat(fatAmount.getText())) {
+                && verifyFloat(proteinAmount.getText())
+                && verifyFloat(carbAmount.getText())
+                && verifyFloat(fatAmount.getText())) {
             name = foodName.getText();
             System.out.println(name);
             protein = Float.parseFloat(proteinAmount.getText());
@@ -118,8 +130,12 @@ public class FoodLoggerController extends TreeCell<String> implements Initializa
         }
     }
 
-
-    private boolean varifyFloat(String input) {
+    /**
+     * Verifies that the string can be made into a float.
+     * @param input
+     * @return True if the value can be parsed to a float
+     */
+    private boolean verifyFloat(String input) {
         try {
             Float.parseFloat(input);
         } catch (NumberFormatException NFE) {
@@ -128,7 +144,7 @@ public class FoodLoggerController extends TreeCell<String> implements Initializa
         }
         return true;
     }
-
+    //todo rename
     public void updateScene(ActionEvent actionEvent) {
         Button button = (Button) actionEvent.getSource();
         Stage stage = (Stage) button.getScene().getWindow();
@@ -137,12 +153,20 @@ public class FoodLoggerController extends TreeCell<String> implements Initializa
         } else stage.setScene(SceneController.getScene("Main"));
     }
 
+    /**
+     * Sets style for a button if the mouse is over the button.
+     * @param mouseEvent
+     */
     public void mouseOver(MouseEvent mouseEvent) {
         Button button = (Button) mouseEvent.getSource();
         button.getStyleClass().clear();
         button.getStyleClass().add("styled-button-pressed");
     }
 
+    /**
+     * Sets style for a button if the mouse is not over the button.
+     * @param mouseEvent
+     */
     public void mouseExit(MouseEvent mouseEvent) {
         Button button = (Button) mouseEvent.getSource();
         button.getStyleClass().clear();

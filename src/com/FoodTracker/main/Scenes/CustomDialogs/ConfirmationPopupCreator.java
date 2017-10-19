@@ -1,4 +1,4 @@
-package com.FoodTracker.main.Scenes;
+package com.FoodTracker.main.Scenes.CustomDialogs;
 
 import com.FoodTracker.main.Scenes.Controllers.ConfirmationPopupController;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * Created by Justin on 10/18/2017.
+ * A custom dialog for a confirmation window.
  */
 public class ConfirmationPopupCreator {
 
@@ -18,6 +18,10 @@ public class ConfirmationPopupCreator {
 
     private boolean isConfirmed;
 
+    /**
+     * Creates a new stage and window with text set to "text"
+     * @param text
+     */
     public ConfirmationPopupCreator(String text) {
         Stage stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
@@ -36,7 +40,10 @@ public class ConfirmationPopupCreator {
         isConfirmed = controller.isConfirmed();
     }
 
-
+    /**
+     * Checks if user confirmed input
+     * @return True is user confirms
+     */
     public boolean isConfirmed() {
         return isConfirmed;
     }
