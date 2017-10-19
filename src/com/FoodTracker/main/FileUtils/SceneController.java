@@ -43,26 +43,5 @@ public class SceneController {
      }
      return scene;
      }
-    /*public static void addScene(String key, String fileName) {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        try {
-            fxmlLoader.setLocation(SceneController.class.getResource(path + fileName));
-            fxmlLoader.load();
-            scenes.put(key, fxmlLoader);
-        } catch (NullPointerException NPE) {
-            System.err.println("Could not load scene! Closing Program!");
-            NPE.printStackTrace();
-            Platform.exit();
-        } catch (IOException IOE) {
-            System.err.println("Could not load scene! Closing Program!");
-            IOE.printStackTrace();
-            Platform.exit();
-        }
 
-    }
-
-    public static FXMLLoader getScene(String key){
-       return scenes.get(key);
-    }
-*/
 }

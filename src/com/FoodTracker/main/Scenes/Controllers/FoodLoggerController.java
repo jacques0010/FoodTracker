@@ -102,13 +102,14 @@ public class FoodLoggerController extends TreeCell<String> implements Initializa
                     updateTreeView();
                     today.addFood(RM.getFoods().get(name));
                 } else today.addFood(name, protein, carbs, fats);
+                RM.getDays().put(RM.getToday(), today);
             }
-            RM.getDays().put(RM.getToday(), today);
-        } else {
+        } else if(foodSelected != null) {
             today.addFood(foodSelected);
             RM.getDays().put(RM.getToday(), today);
         }
     }
+    
 
     private boolean varifyFloat(String input) {
         try {

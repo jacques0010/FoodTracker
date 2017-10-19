@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -18,7 +19,7 @@ import java.util.ResourceBundle;
 /**
  * Scene controller for the main scene
  */
-public class MainSceneController implements Initializable {
+public class MainSceneController {
     private ResourceManager RM = ResourceManager.getInstance();
     private Day today = RM.getDays().get(RM.getToday());
     @FXML
@@ -60,8 +61,9 @@ public class MainSceneController implements Initializable {
     private float fCalories = CalorieCounter.fCalorlies(fats);
 
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(){
+
+        //calFromCarbs.getScene().getStylesheets().add("/com/FoodTracker/main/Scenes/SceneRes/style.css");
 
         proteinAmount.setText("Protein Consumed: " + protein + "g");
         carbAmount.setText("Carbs Consumed: " + carbs + "g");
@@ -82,5 +84,17 @@ public class MainSceneController implements Initializable {
         Button button = (Button) actionEvent.getSource();
         Stage stage = (Stage) button.getScene().getWindow();
         stage.setScene(SceneController.getScene("FoodLogger"));
+    }
+
+    public void mousePressed(MouseEvent mouseEvent) {
+        Button button = (Button) mouseEvent.getSource();
+        button.getStyleClass().clear();
+        button.getStyleClass().add("styled-button-pressed");
+    }
+
+    public void mouseReleased(MouseEvent mouseEvent) {
+        Button button = (Button) mouseEvent.getSource();
+        button.getStyleClass().clear();
+        button.getStyleClass().add("styled-button");
     }
 }
