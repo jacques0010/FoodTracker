@@ -24,7 +24,7 @@ import java.util.ResourceBundle;
 
 public class FoodLoggerController extends TreeCell<String> {
 
-    //todo rethink popup control
+    //todo create a form of feedback for the submit button
     private ResourceManager RM = ResourceManager.getInstance();
     private Day today = RM.getDays().get(RM.getToday());
     private HashMap<String, Food> foods = RM.getFoods();
