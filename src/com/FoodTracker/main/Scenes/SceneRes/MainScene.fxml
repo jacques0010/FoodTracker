@@ -4,32 +4,114 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
 <AnchorPane prefHeight="720" prefWidth="1280"
             xmlns="http://javafx.com/javafx/8.0.121"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.FoodTracker.main.Scenes.Controllers.MainSceneController"
             stylesheets="/com/FoodTracker/main/Scenes/SceneRes/style.css">
-    <Rectangle fill="525252" height="720" width="250" x="0" y="0" />
-    <Rectangle fill="525252" height="200" width="1280" x="0" y="0" />
+
+    <Rectangle fill="424242" height="720" width="250" x="0" y="0"/>
+    <Rectangle fill="424242" height="200" width="1280" x="0" y="0"/>
     <Text text="default text"
-            fx:id="totalCalories"
+          fx:id="totalCalories"
           style="-fx-font-size: 36"
           fill="whitesmoke"
-            x="480"
-            y="100"
+          x="500"
+          y="100"
+    ></Text>
+    <Text fx:id="calFromProtein"
+          style="-fx-font-size: 24"
+          fill="white"
+          x="350"
+          y="150"
+    ></Text>
+    <Text fx:id="calFromCarbs"
+          style="-fx-font-size: 24"
+          fill="white"
+          x="660"
+          y="150"
+    ></Text>
+    <Text fx:id="calFromFat"
+          style="-fx-font-size: 24"
+          fill="white"
+          x="950"
+          y="150"
+    ></Text>
+    <Text text="Amount eaten:"
+          style="-fx-font-size: 24"
+          fill="white"
+          x="15"
+          y="220"
+    ></Text>
+    <Text fx:id="proteinAmount"
+          styleClass="value-text"
+          x="50"
+          y="250">
+    </Text>
+    <Text fx:id="carbAmount"
+          styleClass="value-text"
+          x="50"
+          y="275">
+    </Text>
+    <Text fx:id="fatAmount"
+          styleClass="value-text"
+          x="50"
+          y="300">
+    </Text>
+    <Text text="Percent of calories..."
+          fill="white"
+          style="-fx-font-size: 24"
+          x="15"
+          y="350"
+    ></Text>
+    <Text fx:id="proteinCalPercent"
+          styleClass="value-text"
+          x="50"
+          y="380">
+    </Text>
+    <Text fx:id="carbCalPercent"
+          styleClass="value-text"
+          x="50"
+          y="405"
+    ></Text>
+    <Text fx:id="fatCalPercent"
+          styleClass="value-text"
+          x="50"
+          y="430"
     ></Text>
     <Button fx:id="addFood"
             onAction="#logFood"
             onMouseEntered="#mousePressed"
             onMouseExited="#mouseReleased"
             text="Log Food"
-            minWidth="100"
-            minHeight="25"
             AnchorPane.bottomAnchor="100"
             AnchorPane.leftAnchor="1000"
-           styleClass="styled-button">
-
+            styleClass="styled-button">
     </Button>
+    <MenuBar
+        prefWidth="1280">
+        <menus>
+            <Menu mnemonicParsing="false" text="File">
+                <items>
+                    <MenuItem mnemonicParsing="false" text="Close"/>
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+                <items >
+                    <MenuItem mnemonicParsing="false" text="Delete"/>
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+                <items >
+                    <MenuItem mnemonicParsing="false" text="About"/>
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+
     <!--<Rectangle GridPane.columnIndex="0"
                GridPane.rowIndex="0"
                GridPane.rowSpan="5"
@@ -47,45 +129,9 @@
             minHeight="25">
 
     </Button> -->
-    <Text text="Percent of calories:"
-          style="-fx-font-size: 36"
-    ></Text>
-
-    <Text text="Amount eaten"
-          style="-fx-font-size: 36"
-    ></Text>
-    <Text fx:id="proteinAmount"
-          style="-fx-font-size: 24">
-    </Text>
-    <Text fx:id="proteinCalPercent"
-        style="-fx-font-size: 24">
-
-    </Text>
-    <Text fx:id="carbAmount"
-          style="-fx-font-size: 24">
-    </Text>
-    <Text fx:id="carbCalPercent"
-          style="-fx-font-size: 24"
-    ></Text>
-    <Text fx:id="fatAmount"
-          style="-fx-font-size: 24">
-    </Text>
-    <Text fx:id="fatCalPercent"
-          style="-fx-font-size: 24"
-    ></Text>
-   <!-- <Text fx:id="totalCalories"
-          style="-fx-font-size: 36"
-    ></Text>-->
-
-    <Text fx:id="calFromProtein"
-          style="-fx-font-size: 24"
-    ></Text>
-    <Text fx:id="calFromCarbs"
-          style="-fx-font-size: 24"
-    ></Text>
-    <Text fx:id="calFromFat"
-                  style="-fx-font-size: 24"
-></Text>
+    <!-- <Text fx:id="totalCalories"
+           style="-fx-font-size: 36"
+     ></Text>-->
 
 
 </AnchorPane>

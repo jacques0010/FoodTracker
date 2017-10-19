@@ -50,6 +50,9 @@ public class MainSceneController {
     @FXML
     private Text calFromFat;
 
+    @FXML
+    private Button addFood;
+
     private float protein = today.getTotalProtein();
     private float carbs = today.getTotalCarbs();
     private float fats = today.getTotalFats();
@@ -61,23 +64,30 @@ public class MainSceneController {
     private float fCalories = CalorieCounter.fCalorlies(fats);
 
 
-    public void initialize(){
+    public void initialize() {
 
-        //calFromCarbs.getScene().getStylesheets().add("/com/FoodTracker/main/Scenes/SceneRes/style.css");
+        addFood.getStyleClass().clear();
+        addFood.getStyleClass().add("styled-button");
 
         proteinAmount.setText("Protein Consumed: " + protein + "g");
         carbAmount.setText("Carbs Consumed: " + carbs + "g");
         fatAmount.setText("Fats Consumed: " + fats + "g");
 
-        totalCalories.setText("Total calories eaten: " + calories);
-        calFromProtein.setText("Calories from protein: " + pCalories);
-        calFromCarbs.setText("Calories from carbs: " + cCalories);
-        calFromFat.setText("Calories from fats: " + fCalories);
+        totalCalories.setText("Total calories eaten today: " + (int) calories + "Kcal");
+        calFromProtein.setText("Calories from protein: " + (int) pCalories);
+        calFromCarbs.setText("Calories from carbs: " + (int) cCalories);
+        calFromFat.setText("Calories from fats: " + (int) fCalories);
 
-        proteinCalPercent.setText(((pCalories / calories) * 1E2) + " %");
-        carbCalPercent.setText(((cCalories / calories) * 1E2) + " %");
-        fatCalPercent.setText(((fCalories / calories) * 1E2) + " %");
-
+        if (calories != 0) {
+            proteinCalPercent.setText("From protein: " +
+                    String.format( "%.2f" , ((pCalories / calories) * 1E2)) + "%");
+            carbCalPercent.setText("From carbs: " + String.format( "%.2f" , ((cCalories / calories) * 1E2))+ " %");
+            fatCalPercent.setText("From fats: " + String.format( "%.2f" , ((fCalories / calories) * 1E2)) + " %");
+        } else {
+            proteinCalPercent.setText("Nothing eaten yet");
+            carbCalPercent.setText("Nothing eaten yet");
+            fatCalPercent.setText("Nothing eaten yet");
+        }
     }
 
     public void logFood(ActionEvent actionEvent) {
