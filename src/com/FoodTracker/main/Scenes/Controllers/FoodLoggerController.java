@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -45,6 +46,9 @@ public class FoodLoggerController extends TreeCell<String> implements Initializa
     private
     TreeView<String> foodList;
 
+    @FXML private Button logFood;
+    @FXML private Button goToMain;
+
     private String name;
 
     private float protein;
@@ -66,6 +70,10 @@ public class FoodLoggerController extends TreeCell<String> implements Initializa
                     }
             );
         }
+        logFood.getStyleClass().clear();
+        logFood.getStyleClass().add("styled-button");
+        goToMain.getStyleClass().clear();
+        goToMain.getStyleClass().add("styled-button");
     }
 
 
@@ -109,7 +117,7 @@ public class FoodLoggerController extends TreeCell<String> implements Initializa
             RM.getDays().put(RM.getToday(), today);
         }
     }
-    
+
 
     private boolean varifyFloat(String input) {
         try {
@@ -127,5 +135,17 @@ public class FoodLoggerController extends TreeCell<String> implements Initializa
         if (button.getId().equals("update")) {
             stage.setScene(SceneController.getScene("FoodLogger"));
         } else stage.setScene(SceneController.getScene("Main"));
+    }
+
+    public void mouseOver(MouseEvent mouseEvent) {
+        Button button = (Button) mouseEvent.getSource();
+        button.getStyleClass().clear();
+        button.getStyleClass().add("styled-button-pressed");
+    }
+
+    public void mouseExit(MouseEvent mouseEvent) {
+        Button button = (Button) mouseEvent.getSource();
+        button.getStyleClass().clear();
+        button.getStyleClass().add("styled-button");
     }
 }

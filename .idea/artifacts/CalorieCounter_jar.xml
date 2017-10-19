@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="CalorieCounter:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/CalorieCounter_jar</output-path>
-    <root id="archive" name="CalorieCounter.jar">
-      <element id="module-output" name="FoodTracker" />
-    </root>
-  </artifact>
-</component>

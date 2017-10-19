@@ -2,97 +2,107 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<GridPane xmlns:fx="http://javafx.com/fxml"
-          fx:controller="com.FoodTracker.main.Scenes.Controllers.FoodLoggerController"
-          prefHeight="720" prefWidth="1280.0"
-          vgap="16"
-          hgap="16">
-    <Label text="Please select food"
-           GridPane.columnIndex="0"
-           GridPane.rowIndex="0">
+<?import javafx.scene.shape.Rectangle?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.FoodTracker.main.Scenes.Controllers.FoodLoggerController"
+            stylesheets="/com/FoodTracker/main/Scenes/SceneRes/style.css"
+            prefHeight="720" prefWidth="1280.0">
+    <Label text="Please select food">
     </Label>
+    <Rectangle fill="#424242" x="0" y="0" width="1280" height="200"/>
     <TreeView fx:id="foodList"
-              GridPane.rowIndex="0"
-              GridPane.columnIndex="0"
-              GridPane.rowSpan="10">
-
+              AnchorPane.leftAnchor="0"
+              AnchorPane.bottomAnchor="0"
+              minHeight="695"
+              minWidth="350">
     </TreeView>
-
-    <Label text="Custom Food"
-           GridPane.rowIndex="3"
-           GridPane.columnIndex="1"
-           GridPane.columnSpan="2"
-           style="-fx-font-size:32">
+    <Label text="Select a food from the list or create a new one"
+           styleClass="title-label"
+           AnchorPane.topAnchor="75"
+           AnchorPane.leftAnchor="500"
+    >
     </Label>
     <Label text="Name of food"
-           GridPane.columnIndex="1"
-           GridPane.rowIndex="4"
+           AnchorPane.leftAnchor="400"
+           AnchorPane.topAnchor="300"
     >
     </Label>
     <TextField
-               fx:id="foodName"
-               GridPane.columnIndex="1"
-               GridPane.rowIndex="5"
-               GridPane.columnSpan="2"
+            fx:id="foodName"
+            AnchorPane.leftAnchor="400"
+            AnchorPane.topAnchor="325"
+            minWidth="200"
     />
 
     <Label text="Amount of protein"
-            GridPane.rowIndex="6"
-            GridPane.columnIndex="1"></Label>
+           AnchorPane.leftAnchor="400"
+           AnchorPane.topAnchor="375"
+    ></Label>
     <TextField
-               fx:id="proteinAmount"
-               GridPane.columnIndex="1"
-               GridPane.rowIndex="7"
+            fx:id="proteinAmount"
+            AnchorPane.leftAnchor="400"
+            AnchorPane.topAnchor="400"
+            maxWidth="120"
     />
     <Label text="Amount of carbs"
-           GridPane.rowIndex="6"
-           GridPane.columnIndex="2"></Label>
+           AnchorPane.leftAnchor="545"
+           AnchorPane.topAnchor="375"
+    ></Label>
     <TextField
-               fx:id="carbAmount"
-               GridPane.columnIndex="2"
-               GridPane.rowIndex="7"
+            fx:id="carbAmount"
+            AnchorPane.leftAnchor="545"
+            AnchorPane.topAnchor="400"
+            maxWidth="110"
     ></TextField>
     <Label text="Amount of fats"
-           GridPane.rowIndex="6"
-           GridPane.columnIndex="3"></Label>
+           AnchorPane.leftAnchor="680"
+           AnchorPane.topAnchor="375"
+    ></Label>
     <TextField
-               fx:id="fatAmount"
-               GridPane.columnIndex="3"
-               GridPane.rowIndex="7"
+            fx:id="fatAmount"
+            AnchorPane.leftAnchor="680"
+            AnchorPane.topAnchor="400"
+            maxWidth="100"
     ></TextField>
 
     <Button fx:id="logFood"
             onAction="#logFood"
+            onMouseEntered="#mouseOver"
+            onMouseExited="#mouseExit"
             text="Submit"
-            GridPane.rowIndex="8"
-            GridPane.columnIndex="2"
-            prefWidth="100"
-            alignment="CENTER"
+            styleClass="styled-button"
+            AnchorPane.leftAnchor="550"
+            AnchorPane.topAnchor="450"
     ></Button>
 
     <Button fx:id="goToMain"
             onAction="#updateScene"
+            onMouseEntered="#mouseOver"
+            onMouseExited="#mouseExit"
             text="Back"
-            GridPane.rowIndex="8"
-            GridPane.columnIndex="1"
-            prefWidth="100"
-            alignment="CENTER"
+            styleClass="styled-button"
+            AnchorPane.leftAnchor="900"
+            AnchorPane.topAnchor="325"
     ></Button>
-    <columnConstraints>
-        <ColumnConstraints percentWidth="36"/>
-    </columnConstraints>
-    <rowConstraints>
-        <RowConstraints/>
-        <RowConstraints/>
-        <RowConstraints/>
-        <RowConstraints/>
-        <RowConstraints/>
-        <RowConstraints/>
-        <RowConstraints/>
-        <RowConstraints/>
-        <RowConstraints/>
-        <RowConstraints prefHeight="720"/>
-    </rowConstraints>
+    <MenuBar
+            prefWidth="1280">
+        <menus>
+            <Menu mnemonicParsing="false" text="File">
+                <items>
+                    <MenuItem mnemonicParsing="false" text="Close"/>
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+                <items>
+                    <MenuItem mnemonicParsing="false" text="Delete"/>
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+                <items>
+                    <MenuItem mnemonicParsing="false" text="About"/>
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
 
-
-</GridPane>
+</AnchorPane>
