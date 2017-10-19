@@ -51,7 +51,7 @@ public class MainSceneController {
     private Text calFromFat;
 
     @FXML
-    private Button addFood;
+    private Button addFood, goToFoodsEaten;
 
     private float protein = today.getTotalProtein();
     private float carbs = today.getTotalCarbs();
@@ -68,6 +68,9 @@ public class MainSceneController {
 
         addFood.getStyleClass().clear();
         addFood.getStyleClass().add("styled-button");
+
+        goToFoodsEaten.getStyleClass().clear();
+        goToFoodsEaten.getStyleClass().add("styled-button");
 
         proteinAmount.setText("Protein Consumed: " + protein + "g");
         carbAmount.setText("Carbs Consumed: " + carbs + "g");
@@ -90,11 +93,6 @@ public class MainSceneController {
         }
     }
 
-    public void logFood(ActionEvent actionEvent) {
-        Button button = (Button) actionEvent.getSource();
-        Stage stage = (Stage) button.getScene().getWindow();
-        stage.setScene(SceneController.getScene("FoodLogger"));
-    }
 
     public void mousePressed(MouseEvent mouseEvent) {
         Button button = (Button) mouseEvent.getSource();
@@ -106,5 +104,18 @@ public class MainSceneController {
         Button button = (Button) mouseEvent.getSource();
         button.getStyleClass().clear();
         button.getStyleClass().add("styled-button");
+    }
+
+    public void gotoScene(ActionEvent actionEvent) {
+        Button button = (Button) actionEvent.getSource();
+        Stage stage = (Stage) button.getScene().getWindow();
+        switch (button.getId()){
+            case "addFood":
+                stage.setScene(SceneController.getScene("FoodLogger"));
+                break;
+            case "goToFoodsEaten":
+                stage.setScene(SceneController.getScene("TodaysFoodList"));
+                break;
+        }
     }
 }

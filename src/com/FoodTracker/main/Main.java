@@ -22,6 +22,7 @@ public class Main extends Application {
         SceneController.addScene("Main", "MainScene.fxml");
         SceneController.addScene("FoodLogger", "FoodLogger.fxml");
         SceneController.addScene("ConfirmationPopup", "ConfirmationPopup.fxml");
+        SceneController.addScene("TodaysFoodList" , "TodaysFoodList.fxml");
     }
 
     @Override

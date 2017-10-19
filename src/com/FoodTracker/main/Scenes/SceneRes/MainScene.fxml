@@ -85,13 +85,21 @@
           y="430"
     ></Text>
     <Button fx:id="addFood"
-            onAction="#logFood"
+            onAction="#gotoScene"
             onMouseEntered="#mousePressed"
             onMouseExited="#mouseReleased"
             text="Log Food"
             AnchorPane.bottomAnchor="100"
             AnchorPane.leftAnchor="1000"
             styleClass="styled-button">
+    </Button>
+    <Button fx:id="goToFoodsEaten"
+            onAction="#gotoScene"
+            onMouseEntered="#mousePressed"
+            onMouseExited="#mouseReleased"
+            text="Today"
+            AnchorPane.topAnchor="400"
+            AnchorPane.leftAnchor="1000">
     </Button>
     <MenuBar
         prefWidth="1280">

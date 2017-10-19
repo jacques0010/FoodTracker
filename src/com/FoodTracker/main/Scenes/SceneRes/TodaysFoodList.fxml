@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.FoodTracker.main.Scenes.Controllers.TodaysFoodListController"
+            prefHeight="720" prefWidth="1280"
+            stylesheets="/com/FoodTracker/main/Scenes/SceneRes/style.css">
+    <ListView fx:id="foodList"
+              AnchorPane.leftAnchor="100"
+              AnchorPane.topAnchor="100">
+
+    </ListView>
+
+    <Button fx:id="goToMain"
+            AnchorPane.topAnchor="400"
+            AnchorPane.leftAnchor="1000"
+            onMouseEntered="#mouseEntered"
+            onMouseExited="#mouseExited"
+            onAction="#goToScene"
+        >
+
+    </Button>
+
+</AnchorPane>
