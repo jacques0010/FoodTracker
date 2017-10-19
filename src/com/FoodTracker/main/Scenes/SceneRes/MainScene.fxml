@@ -7,6 +7,8 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
 <AnchorPane prefHeight="720" prefWidth="1280"
             xmlns="http://javafx.com/javafx/8.0.121"
             xmlns:fx="http://javafx.com/fxml/1"
@@ -111,6 +113,18 @@
             </Menu>
         </menus>
     </MenuBar>
+    <TableView prefHeight="450" prefWidth="700" AnchorPane.leftAnchor="275" AnchorPane.topAnchor="225">
+        <columns>
+            <TableColumn text="Monday" prefWidth="100"/>
+            <TableColumn text="Tuesday" prefWidth="100"/>
+            <TableColumn text="Wednesday" prefWidth="100"/>
+            <TableColumn text="Thursday" prefWidth="100"/>
+            <TableColumn text="Friday" prefWidth="100"/>
+            <TableColumn text="Saturday" prefWidth="100"/>
+            <TableColumn text="Sunday" prefWidth="100"/>
+        </columns>
+
+    </TableView>
 
     <!--<Rectangle GridPane.columnIndex="0"
                GridPane.rowIndex="0"
