@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.*?>
-
+<?import javafx.scene.text.*?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.FoodTracker.main.Scenes.Controllers.TodaysFoodListController"
@@ -17,7 +15,16 @@
 
     </ListView>
 
+    <Text fx:id="name" AnchorPane.topAnchor="300" AnchorPane.leftAnchor="800" />
+    <Text fx:id="protein" AnchorPane.topAnchor="350" AnchorPane.leftAnchor="800" />
+    <Text fx:id="carbs" AnchorPane.topAnchor="400" AnchorPane.leftAnchor="800" />
+    <Text fx:id="fats" AnchorPane.topAnchor="450" AnchorPane.leftAnchor="800" />
+    <Text fx:id="calories" AnchorPane.topAnchor="500" AnchorPane.leftAnchor="800" />
+
+
+
     <Button fx:id="goToMain"
+            text="Back"
             AnchorPane.topAnchor="400"
             AnchorPane.leftAnchor="1000"
             onMouseEntered="#mouseEntered"

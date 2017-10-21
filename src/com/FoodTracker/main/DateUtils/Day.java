@@ -4,6 +4,8 @@ import com.FoodTracker.main.FoodUtils.Food;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This object stores information about the foods eaten for the day. It stores all the foods for that day in an arrayList called foods.
@@ -12,28 +14,32 @@ import java.util.ArrayList;
 
 public class Day implements Serializable {
     private static final long serialVersionUID = 3252032211915592670L;
+    private HashMap<String,Food> foodIndex;
     private ArrayList<Food> foods;
 
     public Day() {
+        foodIndex = new HashMap<>();
         foods = new ArrayList<>();
     }
 
     /**
-     * Adds a food to the arrayList foods using a food object.
+     * Adds a food to the HashMap foods using a food object.
      * @param food
      */
     public void addFood(Food food) {
+        foodIndex.put(food.getNAME(), food);
         foods.add(food);
     }
 
     /**
-     * Adds a food to the arrayList foods by creating a new food object.
+     * Adds a food to the HashMap foods by creating a new food object.
      * @param name
      * @param carbs
      * @param protein
      * @param fats
      */
     public void addFood(String name, float carbs, float protein, float fats) {
+        foodIndex.put(name , new Food(name, carbs, protein, fats));
         foods.add(new Food(name, carbs, protein, fats));
     }
 
@@ -79,12 +85,13 @@ public class Day implements Serializable {
     }
 
     /**
-     * Returns the arrayList of the foods stored in this day.
-     * @return The arrayList of foods
+     * Returns the HashMap of the foods stored in this day.
+     * @return The HashMap of foods
      */
     public ArrayList<Food> getFoods() {
         return foods;
     }
+    public HashMap<String, Food> getFoodIndex(){return foodIndex;}
 
     /**
      *

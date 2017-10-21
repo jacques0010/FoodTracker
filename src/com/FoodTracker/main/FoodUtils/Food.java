@@ -59,4 +59,9 @@ public class Food implements Serializable {
     public String getNAME() {
         return NAME;
     }
+
+    @Override
+    public String toString(){
+        return NAME + ": Protein: " + PROTIEN +"g, Carbs: " + CARBS + "g, Fats: " + FATS + "g";
+    }
 }
