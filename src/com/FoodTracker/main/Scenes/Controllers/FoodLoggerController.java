@@ -7,14 +7,11 @@ import com.FoodTracker.main.FoodUtils.Food;
 import com.FoodTracker.main.Scenes.CustomDialogs.ConfirmationPopupCreator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import java.net.URL;
 import java.util.HashMap;
-import java.util.ResourceBundle;
 
 /**
  * Controller for the UI that adds a new food for the day.

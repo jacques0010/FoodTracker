@@ -7,9 +7,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 
-/**
- * Created by Justin on 10/16/2017.
- */
 public class ConfirmationPopupController {
     @FXML
     private

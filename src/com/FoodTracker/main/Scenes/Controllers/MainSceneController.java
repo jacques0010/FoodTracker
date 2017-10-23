@@ -1,27 +1,18 @@
 package com.FoodTracker.main.Scenes.Controllers;
 
 
-import com.FoodTracker.main.DateUtils.Date;
-import com.FoodTracker.main.FileUtils.ResourceManager;
 import com.FoodTracker.main.DateUtils.Day;
-import com.FoodTracker.main.Math.CalorieCounter;
+import com.FoodTracker.main.FileUtils.ResourceManager;
 import com.FoodTracker.main.FileUtils.SceneController;
-import javafx.beans.value.ObservableValue;
+import com.FoodTracker.main.Math.CalorieCounter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.util.Callback;
-
-import java.net.URL;
-import java.util.Calendar;
-import java.util.ResourceBundle;
 
 /**
  * Scene controller for the main scene
