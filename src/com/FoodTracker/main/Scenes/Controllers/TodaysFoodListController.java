@@ -6,14 +6,11 @@ import com.FoodTracker.main.FileUtils.SceneController;
 import com.FoodTracker.main.FoodUtils.Food;
 import com.FoodTracker.main.Math.CalorieCounter;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
-import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -34,37 +31,44 @@ public class TodaysFoodListController {
 
     private ResourceManager RM = ResourceManager.getInstance();
     private Day today = RM.getDays().get(RM.getToday());
-    private HashMap<String, Food> foodIndex = today.getFoodIndex();
-    private ArrayList<Food> foods = today.getFoods();
+    private HashMap<String, ArrayList<Object>> foodIndex = today.getFoodIndex();
 
     public void initialize() {
-        for (Food food : foods) {
-            ContextMenu menu = new ContextMenu();
-            //fixme works but throws error
-            menu.setOnShown(event -> {
-                if (foodSelected == null || foodSelected.equals("")) menu.hide();
-            });
-            MenuItem delete = new MenuItem("Delete");
-            delete.setOnAction(AE -> {
-                int index = foods.indexOf(foodIndex.get(foodSelected));
-                System.out.println(index);
-                foods.remove(index);
-                foodList.getItems().remove(foodSelected);
-            });
-            menu.getItems().add(delete);
-            foodList.getItems().add(food.getNAME());
+        ContextMenu menu = new ContextMenu();
+        MenuItem delete = new MenuItem("Delete");
+        delete.setOnAction(AE -> {
+            today.setTimesEaten(foodSelected, today.getTimesEaten(foodSelected) - 1);
+            foodList.getItems().remove(foodSelected);
+            foodList.getSelectionModel().clearSelection();
+            name.setText("");
+            protein.setText("");
+            carbs.setText("");
+            fats.setText("");
+            calories.setText("");
+        });
+        menu.getItems().add(delete);
+        foodList.setContextMenu(menu);
+        foodList.setOnContextMenuRequested(event -> {
+                    if (foodSelected == null || foodSelected.equals("")) menu.hide();
+                }
+        );
+        for (String foodName : foodIndex.keySet()) {
+            for (int i = 0; i < today.getTimesEaten(foodName); i++) {
+                foodList.getItems().add(today.getFood(foodName).getNAME());
+            }
             foodList.setOnMouseClicked(ME -> {
                 foodSelected = (String) foodList.getSelectionModel().getSelectedItem();
                 name.setText(foodSelected);
-                Food foodValue = foodIndex.get(foodSelected);
-                if (foodValue != null) {
-                    protein.setText(String.valueOf(foodValue.getPROTIEN()));
-                    carbs.setText(String.valueOf(foodValue.getCARBS()));
-                    fats.setText(String.valueOf(foodValue.getFATS()));
-                    calories.setText(String.valueOf(CalorieCounter.calories(foodValue.getPROTIEN(), foodValue.getCARBS(), foodValue.getFATS())));
+                if (foodSelected != null) {
+                    Food foodValue = today.getFood(foodSelected);
+                    if (foodValue != null) {
+                        protein.setText(String.valueOf(foodValue.getPROTIEN()));
+                        carbs.setText(String.valueOf(foodValue.getCARBS()));
+                        fats.setText(String.valueOf(foodValue.getFATS()));
+                        calories.setText(String.valueOf(CalorieCounter.calories(foodValue.getPROTIEN(), foodValue.getCARBS(), foodValue.getFATS())));
+                    }
                 }
             });
-            foodList.setContextMenu(menu);
         }
         goToMain.getStyleClass().clear();
         goToMain.getStyleClass().add("styled-button");

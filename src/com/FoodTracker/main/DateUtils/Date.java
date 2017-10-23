@@ -8,7 +8,7 @@ import java.time.LocalDate;
  */
 public class Date implements Comparable, Serializable{
     private static final long serialVersionUID = 6888946530616161894L;
-    private final int YEAR, MONTH, DAY;
+    private final int YEAR, MONTH, DAY, DAY_OF_WEEK;
     private static final int hashSeed  = 63;
     private LocalDate date = LocalDate.now();
 
@@ -16,6 +16,7 @@ public class Date implements Comparable, Serializable{
         this.YEAR = date.getYear();
         this.MONTH = date.getMonthValue();
         this.DAY = date.getDayOfMonth();
+        this.DAY_OF_WEEK = date.getDayOfWeek().getValue();
     }
 
     /**
@@ -42,6 +43,13 @@ public class Date implements Comparable, Serializable{
     public int getDay() {
         return DAY;
     }
+
+    /**
+     * Returns the day of the week as an int
+     * @return Day of the week
+     */
+
+    public int getDAY_OF_WEEK(){return DAY_OF_WEEK;}
 
     /**
      * Returns a String with the date in Month/Day/Year format

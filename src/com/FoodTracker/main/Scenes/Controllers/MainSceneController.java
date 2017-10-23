@@ -1,19 +1,26 @@
 package com.FoodTracker.main.Scenes.Controllers;
 
 
+import com.FoodTracker.main.DateUtils.Date;
 import com.FoodTracker.main.FileUtils.ResourceManager;
 import com.FoodTracker.main.DateUtils.Day;
 import com.FoodTracker.main.Math.CalorieCounter;
 import com.FoodTracker.main.FileUtils.SceneController;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 import java.net.URL;
+import java.util.Calendar;
 import java.util.ResourceBundle;
 
 /**
@@ -49,9 +56,13 @@ public class MainSceneController {
     Text calFromCarbs;
     @FXML
     private Text calFromFat;
-
     @FXML
     private Button addFood, goToFoodsEaten;
+    @FXML
+    private TableView calender;
+
+    @FXML
+    TableColumn monday, tuesday, wednesday, thursday, friday, saturday, sunday;
 
     private float protein = today.getTotalProtein();
     private float carbs = today.getTotalCarbs();
@@ -65,6 +76,7 @@ public class MainSceneController {
 
 
     public void initialize() {
+
 
         addFood.getStyleClass().clear();
         addFood.getStyleClass().add("styled-button");
@@ -83,9 +95,9 @@ public class MainSceneController {
 
         if (calories != 0) {
             proteinCalPercent.setText("From protein: " +
-                    String.format( "%.2f" , ((pCalories / calories) * 1E2)) + "%");
-            carbCalPercent.setText("From carbs: " + String.format( "%.2f" , ((cCalories / calories) * 1E2))+ " %");
-            fatCalPercent.setText("From fats: " + String.format( "%.2f" , ((fCalories / calories) * 1E2)) + " %");
+                    String.format("%.2f", ((pCalories / calories) * 1E2)) + "%");
+            carbCalPercent.setText("From carbs: " + String.format("%.2f", ((cCalories / calories) * 1E2)) + " %");
+            fatCalPercent.setText("From fats: " + String.format("%.2f", ((fCalories / calories) * 1E2)) + " %");
         } else {
             proteinCalPercent.setText("Nothing eaten yet");
             carbCalPercent.setText("Nothing eaten yet");
@@ -109,7 +121,7 @@ public class MainSceneController {
     public void gotoScene(ActionEvent actionEvent) {
         Button button = (Button) actionEvent.getSource();
         Stage stage = (Stage) button.getScene().getWindow();
-        switch (button.getId()){
+        switch (button.getId()) {
             case "addFood":
                 stage.setScene(SceneController.getScene("FoodLogger"));
                 break;

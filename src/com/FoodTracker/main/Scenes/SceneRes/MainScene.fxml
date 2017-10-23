@@ -121,15 +121,15 @@
             </Menu>
         </menus>
     </MenuBar>
-    <TableView prefHeight="450" prefWidth="700" AnchorPane.leftAnchor="275" AnchorPane.topAnchor="225">
+    <TableView fx:id="calender" prefHeight="450" prefWidth="700" AnchorPane.leftAnchor="275" AnchorPane.topAnchor="225">
         <columns>
-            <TableColumn text="Monday" prefWidth="100"/>
-            <TableColumn text="Tuesday" prefWidth="100"/>
-            <TableColumn text="Wednesday" prefWidth="100"/>
-            <TableColumn text="Thursday" prefWidth="100"/>
-            <TableColumn text="Friday" prefWidth="100"/>
-            <TableColumn text="Saturday" prefWidth="100"/>
-            <TableColumn text="Sunday" prefWidth="100"/>
+            <TableColumn fx:id="monday" text="Monday" prefWidth="100"/>
+            <TableColumn fx:id="tuesday" text="Tuesday" prefWidth="100"/>
+            <TableColumn fx:id="wednesday" text="Wednesday" prefWidth="100"/>
+            <TableColumn fx:id="thursday" text="Thursday" prefWidth="100"/>
+            <TableColumn fx:id="friday" text="Friday" prefWidth="100"/>
+            <TableColumn fx:id="saturday" text="Saturday" prefWidth="100"/>
+            <TableColumn fx:id="sunday" text="Sunday" prefWidth="100"/>
         </columns>
 
     </TableView>

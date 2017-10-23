@@ -4,28 +4,46 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.MenuBar?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.FoodTracker.main.Scenes.Controllers.TodaysFoodListController"
             prefHeight="720" prefWidth="1280"
             stylesheets="/com/FoodTracker/main/Scenes/SceneRes/style.css">
-    <ListView fx:id="foodList"
-              AnchorPane.leftAnchor="100"
-              AnchorPane.topAnchor="100">
 
+    <Rectangle AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" height="200" width="1280" fill="424242"/>
+    <Rectangle AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" height="720" width="200" fill="424242"/>
+
+    <Label text="Foods eaten today" styleClass="title-label" AnchorPane.leftAnchor="240" AnchorPane.topAnchor="150" >
+
+    </Label>
+
+    <ListView fx:id="foodList"
+              AnchorPane.leftAnchor="250"
+              AnchorPane.topAnchor="250">
     </ListView>
 
-    <Text fx:id="name" AnchorPane.topAnchor="300" AnchorPane.leftAnchor="800" />
-    <Text fx:id="protein" AnchorPane.topAnchor="350" AnchorPane.leftAnchor="800" />
-    <Text fx:id="carbs" AnchorPane.topAnchor="400" AnchorPane.leftAnchor="800" />
-    <Text fx:id="fats" AnchorPane.topAnchor="450" AnchorPane.leftAnchor="800" />
-    <Text fx:id="calories" AnchorPane.topAnchor="500" AnchorPane.leftAnchor="800" />
+    <Label text="Name: " AnchorPane.topAnchor="300" AnchorPane.leftAnchor="600" styleClass="default-label"/>
+    <Label text="Protein: " AnchorPane.topAnchor="325" AnchorPane.leftAnchor="600" styleClass="default-label"/>
+    <Label text="Carbs: " AnchorPane.topAnchor="350" AnchorPane.leftAnchor="600" styleClass="default-label"/>
+    <Label text="Fats: " AnchorPane.topAnchor="375" AnchorPane.leftAnchor="600" styleClass="default-label"/>
+    <Label text="Calories: " AnchorPane.topAnchor="400" AnchorPane.leftAnchor="600" styleClass="default-label"/>
+
+    <Text fx:id="name" AnchorPane.topAnchor="305" AnchorPane.leftAnchor="685" styleClass="value-text2"/>
+    <Text fx:id="protein" AnchorPane.topAnchor="330" AnchorPane.leftAnchor="685" styleClass="value-text2"/>
+    <Text fx:id="carbs" AnchorPane.topAnchor="355" AnchorPane.leftAnchor="685" styleClass="value-text2"/>
+    <Text fx:id="fats" AnchorPane.topAnchor="380" AnchorPane.leftAnchor="685" styleClass="value-text2"/>
+    <Text fx:id="calories" AnchorPane.topAnchor="405" AnchorPane.leftAnchor="685" styleClass="value-text2" />
 
 
 
     <Button fx:id="goToMain"
             text="Back"
-            AnchorPane.topAnchor="400"
+            AnchorPane.topAnchor="600"
             AnchorPane.leftAnchor="1000"
             onMouseEntered="#mouseEntered"
             onMouseExited="#mouseExited"
@@ -33,5 +51,25 @@
         >
 
     </Button>
+    <MenuBar
+            prefWidth="1280">
+        <menus>
+            <Menu mnemonicParsing="false" text="File">
+                <items>
+                    <MenuItem mnemonicParsing="false" text="Close"/>
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+                <items >
+                    <MenuItem mnemonicParsing="false" text="Delete"/>
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+                <items >
+                    <MenuItem mnemonicParsing="false" text="About"/>
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
 
 </AnchorPane>
